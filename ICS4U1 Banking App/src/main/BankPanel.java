@@ -175,7 +175,7 @@ public class BankPanel extends JPanel implements ActionListener, Serializable{
 		if(s.equals("Login")) {
 			for(User u : users) {
 				if(nameInput.getText().equalsIgnoreCase(u.getUsername()) && passInput.getText().equalsIgnoreCase(u.getPassword())) {
-					currentUser = u;
+					//currentUser = u;
 					showAccountScreen();
 				}
 			}
@@ -202,11 +202,11 @@ public class BankPanel extends JPanel implements ActionListener, Serializable{
 		}
 		else if(s.equals("Chequing")) {
 			state = BankState.Chequing;
-			showUserScreen(currentUser.getChequingBal(), currentUser.getSavingsBal());
+			//showUserScreen(currentUser.getChequingBal(), currentUser.getSavingsBal());
 		}
 		else if(s.equals("Savings")) {
 			state = BankState.Savings;
-			showUserScreen(currentUser.getChequingBal(), currentUser.getSavingsBal());
+			//showUserScreen(currentUser.getChequingBal(), currentUser.getSavingsBal());
 		}
 		else if(s.equals("Deposit")) {
 			if(state == BankState.Chequing) {
