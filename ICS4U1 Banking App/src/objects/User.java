@@ -1,6 +1,9 @@
 package objects;
 
+import main.Helpers;
+
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable{
 	
@@ -12,13 +15,15 @@ public class User implements Serializable{
 	private String password;
 	private double chequingBal;
 	private double savingsBal;
+	private Date date;
 	
-	public User(String username, String password, double chequingBal, double savingsBal) {
+	public User(String username, String password, double chequingBal, double savingsBal, Date date) {
 		
 		this.username = username;
 		this.password = password;
 		this.chequingBal = chequingBal;
 		this.savingsBal = savingsBal;
+		this.date = date;
 	}
 
 	public double getChequingBal() {
@@ -52,6 +57,18 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	
+	public void setDate(Date date){
+		this.date = date;
+	}
+	public double addInterest(){
+		Date currentTime = new Date();
+		long diffMs = currentTime.getTime() - date.getTime();
+		long diffSec = diffMs / 1000;
+		long min = diffSec / 60;
+		double bal = savingsBal;
+		for(int i = 0; i < min; i++){
+			bal *= 1.01;
+		}
+		return Helpers.round(bal, 2);
+	}
 }
