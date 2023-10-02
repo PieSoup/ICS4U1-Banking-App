@@ -12,7 +12,7 @@ public class Main {
 		
 		window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setPreferredSize(new Dimension(250, 200));
+		window.setPreferredSize(new Dimension(270, 200));
 		window.setTitle("Epic Banking App");
 		
 		BankPanel panel = new BankPanel();
